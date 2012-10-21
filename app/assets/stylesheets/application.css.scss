@@ -24,8 +24,13 @@ body {
 a {
   color: $text;
   text-decoration: none;
-  a:hover {
-    color: black;
+  &:hover {
+    color: orange;
+  }
+  &:active {
+    position: relative;
+    top: 1;
+    left: 1;
   }
 }
 
@@ -55,6 +60,9 @@ a {
     &.last {
       margin-right: 0px;
     }
+    img:hover {
+      @include box-shadow;
+    }
     p {
       margin-top: 10px;
     }
@@ -75,22 +83,31 @@ ul.inline {
   }
 }
 #navigation {
-  float: left;
-  margin: 0 65px 0 10px;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  height: 600px;
+  margin-top: -300px;
+  background-color: white;
+  z-index: 2;
+  width: 130px;
+  padding-left: 20px;
+  padding-right: 50px;
+
   h2 {
     font-weight: bold;
   }
   ul {
     margin: 10px 0 25px;
-    list-style-type: circle;
   }
   li {
     margin: 5px 0;
     padding-left: 15px;
   }
 }
-.horizontal_scroll {
+.photo_viewer {
   width: 75000px;
+  margin-left: 200px;
   position: absolute;
   top: 50%;
   height: 600px;

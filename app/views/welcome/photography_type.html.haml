@@ -1,27 +1,26 @@
 = link_to root_url do
   = image_tag URL.assets("home/logo.jpg"), :alt => "Alexandra Farias photography", :class => "horizontal_scroll_logo"
 
-.horizontal_scroll
-  %section#navigation
-    %h2 Photographs
-    %ul
-      %li= link_to "Newborns", newborns_path
-      %li= link_to "Kids", kids_path
-      %li= link_to "Families", families_path
-    %h2 Classes
-    %ul
-      %li Details
-      %li Syllabus
-    %h2 Alexandra
-    %ul
-      %li About me
-      %li Contact me
-      %li
-        = link_to "http://facebook.com/alexandrafariasphotography" do
-          = image_tag URL.assets("facebook.png"), :width => 20
-      %li= link_to "Blog", "http://alexandrafarias.tumblr.com"
+%section#navigation
+  %h2 Photographs
+  %ul
+    %li= link_to "Newborns", newborns_path
+    %li= link_to "Kids", kids_path
+    %li= link_to "Families", families_path
+  %h2 Classes
+  %ul
+    %li Details
+    %li Syllabus
+  %h2 Alexandra
+  %ul
+    %li About me
+    %li Contact me
+    %li
+      = link_to "http://facebook.com/alexandrafariasphotography" do
+        = image_tag URL.assets("facebook.png"), :width => 20
+    %li= link_to "Blog", "http://alexandrafarias.tumblr.com"
 
-  %section.photo_viewer
-    - @urls.each do |url|
-      = image_tag url
+%section.photo_viewer
+  - @urls.each do |url|
+    = image_tag url
 
