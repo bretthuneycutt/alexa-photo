@@ -1,0 +1,9 @@
+%html
+  %head
+    %title Kids photography, potraits and classes | Alexandra Farias Photography
+    %meta{name: "description", content: "Alexandra Farias offers professional photography services, specializing in kids and family portraiture, as well as private tutoring for children."}
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    = yield

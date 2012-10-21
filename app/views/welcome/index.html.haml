@@ -1,3 +1,17 @@
-%h1 Hola, Ale.
-= image_tag "http://s3.amazonaws.com/alexa-photo/kids/horiz_kids-1.jpg"
-%p Te amo.
+#home
+  %section.logo
+    = image_tag URL.assets("home/logo.jpg"), :alt => "Alexandra Farias Photography"
+  %section.clearfix
+    .portrait_type
+      = image_tag URL.assets("home/newborn-baby-photography.jpg")
+      %p Newborns
+    .portrait_type
+      = image_tag URL.assets("home/kids-photography.jpg")
+      %p Kids
+    .portrait_type.last
+      = image_tag URL.assets("home/families-photography.jpg")
+      %p Families
+  %footer
+    %ul.inline
+      %li Classes
+      %li Contact me
