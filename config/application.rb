@@ -60,5 +60,13 @@ module AlexaPhoto
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    if ENV['HOSTNAME']
+      config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+        r301 %r{.*}, "http://#{ENV['HOSTNAME']}$&", :if => Proc.new do |rack_env|
+          rack_env['SERVER_NAME'] != ENV['HOSTNAME']
+        end
+      end
+    end
   end
 end
