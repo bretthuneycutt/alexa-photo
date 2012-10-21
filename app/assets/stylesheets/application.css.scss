@@ -21,6 +21,14 @@ body {
 	color: $text;
 }
 
+a {
+  color: $text;
+  text-decoration: none;
+  a:hover {
+    color: black;
+  }
+}
+
 .container {
 	width: 1000px;
 	margin: 100px auto;
@@ -66,3 +74,32 @@ ul.inline {
     padding-right: 15px;
   }
 }
+#navigation {
+  float: left;
+  margin: 0 65px 0 10px;
+  h2 {
+    font-weight: bold;
+  }
+  ul {
+    margin: 10px 0 25px;
+    list-style-type: circle;
+  }
+  li {
+    margin: 5px 0;
+    padding-left: 15px;
+  }
+}
+.horizontal_scroll {
+  width: 75000px;
+  position: absolute;
+  top: 50%;
+  height: 600px;
+  margin-top: -300px;
+}
+
+.horizontal_scroll_logo {
+  position: fixed;
+  left: 50%;
+  margin-left: -200px;
+}
+

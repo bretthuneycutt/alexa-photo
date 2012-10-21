@@ -3,14 +3,17 @@
     = image_tag URL.assets("home/logo.jpg"), :alt => "Alexandra Farias Photography"
   %section.clearfix
     .portrait_type
-      = image_tag URL.assets("home/newborn-baby-photography.jpg")
-      %p Newborns
+      = link_to newborns_path do
+        = image_tag URL.assets("home/newborn-baby-photography.jpg")
+        %p Newborns
     .portrait_type
-      = image_tag URL.assets("home/kids-photography.jpg")
-      %p Kids
+      = link_to kids_path do
+        = image_tag URL.assets("home/kids-photography.jpg")
+        %p Kids
     .portrait_type.last
-      = image_tag URL.assets("home/families-photography.jpg")
-      %p Families
+      = link_to families_path do
+        = image_tag URL.assets("home/families-photography.jpg")
+        %p Families
   %footer
     %ul.inline
       %li Classes
