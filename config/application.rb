@@ -63,9 +63,9 @@ module AlexaPhoto
 
     if ENV['HOSTNAME']
       config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
-        r301 %r{.*}, "http://#{ENV['HOSTNAME']}$&", :if => Proc.new do |rack_env|
+        r301 %r{.*}, "http://#{ENV['HOSTNAME']}$&", :if => Proc.new { |rack_env|
           rack_env['SERVER_NAME'] != ENV['HOSTNAME']
-        end
+        }
       end
     end
   end
