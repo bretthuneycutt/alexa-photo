@@ -24,3 +24,10 @@
   - @urls.each do |url|
     = image_tag url
 
+:javascript
+  $(function() {
+     $("body").mousewheel(function(event, delta) {
+        this.scrollLeft -= (delta * 30);
+        event.preventDefault();
+     });
+  });
