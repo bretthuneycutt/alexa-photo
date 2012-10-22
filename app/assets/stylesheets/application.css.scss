@@ -19,6 +19,8 @@
 body {
 	@include font-sans-serif;
 	color: $text;
+  line-height: 1.2em;
+  letter-spacing: 1px;
 }
 
 a {
@@ -46,12 +48,13 @@ a {
 #home {
   $portrait_width: 250px;
   $portrait_margin: 15px;
+  $number_of_portraits: 4;
 
   .logo {
     text-align: center;
   }
 
-	@include container($portrait_width * 3 + $portrait_margin * 2);
+	@include container($portrait_width * $number_of_portraits + $portrait_margin * ($number_of_portraits - 1));
 
   .portrait_type {
     float: left;
@@ -68,50 +71,59 @@ a {
     }
   }
 
-
 	footer {
-    margin-top: 200px;
+    margin: 100px auto;
     text-align: center;
+    width: 500px;
+    p {
+      padding-bottom: 100px;
+    }
 	}
 }
 
 
-ul.inline {
-  li {
-    display: inline;
-    padding-right: 15px;
-  }
-}
-#navigation {
+$nav_width: 150px;
+$nav_padding_left: 30px;
+$nav_padding_right: 30px;
+$nav_margin_top: 140px;
+$viewer_margin: $nav_width + $nav_padding_left + $nav_padding_right;
+$viewer_height: 600px;
+
+.side_navigation {
   position: fixed;
   left: 0;
-  top: 50%;
-  height: 600px;
-  margin-top: -300px;
   background-color: white;
   z-index: 2;
-  width: 130px;
-  padding-left: 20px;
-  padding-right: 50px;
-
+  width: $nav_width;
+  padding-left: $nav_padding_left;
+  padding-right: $nav_padding_right;
+  margin-top: $nav_margin_top;
+  height: 600px;
   h2 {
     font-weight: bold;
+    margin-top: 25px;
+    &.first {
+      margin-top: 0;
+    }
   }
   ul {
-    margin: 10px 0 25px;
+    margin: 10px 0 0;
   }
   li {
     margin: 5px 0;
     padding-left: 15px;
   }
 }
-.photo_viewer {
-  width: 75000px;
-  margin-left: 200px;
+
+.side_navigation_body {
+  margin-left: $viewer_margin;
+  top: $nav_margin_top;
   position: absolute;
-  top: 50%;
-  height: 600px;
-  margin-top: -300px;
+}
+
+.photo_viewer {
+  height: $viewer_height;
+  width: 5000px;
   img {
     float: left;
     margin-right: 3px;
@@ -120,7 +132,36 @@ ul.inline {
 
 .horizontal_scroll_logo {
   position: fixed;
-  left: 50%;
-  margin-left: -200px;
+  text-align: center;
+  width: 100%;
+  height: $nav_margin_top;
+  background-color: white;
+  z-index: 2;
 }
 
+footer.horizontal_scroll {
+  position: fixed;
+  top: $nav_margin_top + $viewer_height + 100px;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+  text-align: center;
+}
+
+.copyright { 
+  font-size: 11px;
+}
+
+.copy {
+  margin-right: $viewer_margin;
+  h2 {
+    font-weight: bold;
+  }
+  img {
+    margin: 0 auto;
+    display: block;
+  }
+  h2, img, p, li {
+    margin-bottom: 20px;
+  }
+}

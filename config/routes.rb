@@ -48,9 +48,13 @@ AlexaPhoto::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
+  match 'photography-details' => 'welcome#photography_details'
+  match 'contact' => 'welcome#contact'
+  match 'classes' => 'welcome#classes'
   match 'kids' => 'welcome#kids'
   match 'newborns' => 'welcome#newborns'
   match 'families' => 'welcome#families'
+  match 'about' => 'welcome#about'
 
   root :to => 'welcome#index'
 

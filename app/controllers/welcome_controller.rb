@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
+  layout :layout
+
 	def index
 	end
 
@@ -15,5 +17,11 @@ class WelcomeController < ApplicationController
   def families
     @photos = FamilyPhoto.all
     render "photography_type"
+  end
+
+private 
+
+  def layout
+    action_name == 'index' ? 'application' : 'side_navigation'
   end
 end

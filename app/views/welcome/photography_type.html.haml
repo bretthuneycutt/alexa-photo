@@ -1,29 +1,10 @@
-= link_to root_url do
-  = image_tag URL.assets("home/logo.jpg"), :alt => "Alexandra Farias photography", :class => "horizontal_scroll_logo"
-
-%section#navigation
-  %h2 Photographs
-  %ul
-    %li= link_to "Newborns", newborns_path
-    %li= link_to "Kids", kids_path
-    %li= link_to "Families", families_path
-  %h2 Classes
-  %ul
-    %li Details
-    %li Syllabus
-  %h2 Alexandra
-  %ul
-    %li About me
-    %li Contact me
-    %li
-      = link_to "http://facebook.com/alexandrafariasphotography" do
-        = image_tag URL.assets("facebook.png"), :width => 20
-    %li= link_to "Blog", "http://alexandrafarias.tumblr.com"
-
 - width = @photos.map{ |p| p.width_and_margin }.inject(:+) + 50
-%section.photo_viewer{style: "width: #{width}px;"}
+%section.photo_viewer.clearfix{style: "width: #{width}px;"}
   - @photos.each do |photo|
     = image_tag photo.url, :width => photo.width
+
+%footer.horizontal_scroll
+  %p.copyright © Alexandra Farias Photograpy, 2010-#{Time.now.year}
 
 :javascript
   $(function() {

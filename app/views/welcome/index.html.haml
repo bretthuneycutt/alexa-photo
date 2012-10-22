@@ -1,6 +1,6 @@
 #home
   %section.logo
-    = image_tag URL.assets("home/logo.jpg"), :alt => "Alexandra Farias Photography"
+    = image_tag URL.assets("home/alexandra-farias-photography-logo.jpg"), :alt => "Alexandra Farias Photography"
   %section.clearfix
     .portrait_type
       = link_to newborns_path do
@@ -10,11 +10,15 @@
       = link_to kids_path do
         = image_tag URL.assets("home/kids-photography.jpg")
         %p Kids
-    .portrait_type.last
+    .portrait_type
       = link_to families_path do
         = image_tag URL.assets("home/families-photography.jpg")
         %p Families
+    .portrait_type.last
+      = link_to classes_path do
+        = image_tag URL.assets("home/kids-photography-classes.jpg")
+        %p Classes
+
   %footer
-    %ul.inline
-      %li Classes
-      %li Contact me
+    %p I am a portrait photography in the San Francisco Bay Area who specializes in kids, newborns and family portraits. I like using a natural and artistic/documentary approach to capture my clients' true personalities and emotions. Please #{link_to "get in touch", contact_path} if you would like me to take photos for your family.
+    %p.copyright © Alexandra Farias Photograpy, 2010-#{Time.now.year}

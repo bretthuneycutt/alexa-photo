@@ -1,0 +1,16 @@
+= inside_layout do
+  = link_to root_url, :class => 'horizontal_scroll_logo' do
+    = image_tag URL.assets("home/alexandra-farias-photography-logo.jpg"), :alt => "Alexandra Farias photography"
+
+  %section.side_navigation
+    %h2.first Photographs
+    %ul
+      %li= link_to "Newborns", newborns_path
+      %li= link_to "Kids", kids_path
+      %li= link_to "Families", families_path
+      %li= link_to "Details", "/photography-details"
+    %h2= link_to "Private tutoring", classes_path
+    %h2= link_to "About me", about_path
+
+  %section.side_navigation_body
+    = yield
