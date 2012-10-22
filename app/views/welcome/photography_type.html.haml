@@ -20,9 +20,10 @@
         = image_tag URL.assets("facebook.png"), :width => 20
     %li= link_to "Blog", "http://alexandrafarias.tumblr.com"
 
-%section.photo_viewer
-  - @urls.each do |url|
-    = image_tag url
+- width = @photos.map{ |p| p.width_and_margin }.inject(:+) + 50
+%section.photo_viewer{style: "width: #{width}px;"}
+  - @photos.each do |photo|
+    = image_tag photo.url
 
 :javascript
   $(function() {

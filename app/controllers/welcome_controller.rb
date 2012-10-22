@@ -3,18 +3,17 @@ class WelcomeController < ApplicationController
 	end
 
   def kids
-    @urls = (1..48).map {|i| URL.assets("kids/#{i}.jpg") }
-    @urls.concat (1..24).map {|i| URL.assets"kids/v#{i}.jpg" }
+    @photos = KidPhoto.all
     render "photography_type"
   end
 
   def newborns
-    @urls = (1..13).map {|i| URL.assets("newborns/#{i}.jpg")}
+    @photos = NewbornPhoto.all
     render "photography_type"
   end
 
   def families
-    @urls = (2..4).map {|i| URL.assets("families/#{i}.jpg")}
+    @photos = FamilyPhoto.all
     render "photography_type"
   end
 end

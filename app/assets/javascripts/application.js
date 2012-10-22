@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery.mousewheel.js
+//= require jquery.underscore.js

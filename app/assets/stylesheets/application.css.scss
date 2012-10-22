@@ -112,6 +112,10 @@ ul.inline {
   top: 50%;
   height: 600px;
   margin-top: -300px;
+  img {
+    float: left;
+    margin-right: 3px;
+  }
 }
 
 .horizontal_scroll_logo {
