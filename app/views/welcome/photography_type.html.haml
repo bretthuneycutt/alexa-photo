@@ -23,7 +23,7 @@
 - width = @photos.map{ |p| p.width_and_margin }.inject(:+) + 50
 %section.photo_viewer{style: "width: #{width}px;"}
   - @photos.each do |photo|
-    = image_tag photo.url
+    = image_tag photo.url, :width => photo.width
 
 :javascript
   $(function() {
