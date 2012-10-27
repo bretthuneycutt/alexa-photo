@@ -1,7 +1,7 @@
 - width = @photos.map{ |p| p.width_and_margin }.inject(:+) + 50
 %section.photo_viewer.clearfix{style: "width: #{width}px;"}
   - @photos.each do |photo|
-    = image_tag photo.url, :width => photo.width
+    = image_tag photo.url, :width => photo.width, :height => 600
 
 %footer.horizontal_scroll
   %p.copyright © Alexandra Farias Photograpy, 2010-#{Time.now.year}
