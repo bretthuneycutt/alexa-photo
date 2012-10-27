@@ -4,21 +4,21 @@
   %section.clearfix
     .portrait_type
       = link_to newborns_path do
-        = image_tag URL.assets("home/newborn-baby-photography.jpg")
+        = image_tag URL.assets("home/newborn-baby-photography.jpg"), :width => 250, :height => 250
         %p Newborns
     .portrait_type
       = link_to kids_path do
-        = image_tag URL.assets("home/kids-photography.jpg")
+        = image_tag URL.assets("home/kids-photography.jpg"), :width => 250, :height => 250
         %p Kids
     .portrait_type
       = link_to families_path do
-        = image_tag URL.assets("home/families-photography.jpg")
+        = image_tag URL.assets("home/san-francisco-family-photography.jpg"), :width => 250, :height => 250
         %p Families
     .portrait_type.last
       = link_to classes_path do
-        = image_tag URL.assets("home/kids-photography-classes.jpg")
+        = image_tag URL.assets("home/kids-photography-classes.jpg"), :width => 250, :height => 250
         %p Classes
 
   %footer
-    %p I am a portrait photographer in the San Francisco Bay Area who specializes in kids, newborns and family portraits. I like using a natural and artistic/documentary approach to capture my clients' true personalities and emotions. Please #{link_to "get in touch", contact_path} if you would like me to take photos for your family.
+    %p I am a portrait photographer in the San Francisco Bay Area who specializes in kids, newborns and family portraits. I like using a natural and artistic/documentary approach to capture my clients' true personalities and emotions. Please #{link_to "get in touch", contact_path} if you would like me to take photos of your family.
     %p.copyright © Alexandra Farias Photograpy, 2010-#{Time.now.year}
